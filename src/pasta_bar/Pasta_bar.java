@@ -14,6 +14,27 @@ public class Pasta_bar {
 		int[] price = { 50, 60, 120, 120, 140, 100, 100, 100, 80, 50, 80, 80, 80, 50, 50, 20 };
 		double totalPrice = 0;
 		String ingredientName = "";
+		System.out.println("Izvolite!!");
+		while (!ingredientName.equals("PORUČI")) {
+			System.out.print("Izaberite sastojak za pastu : ");
+			ingredientName = s.nextLine();
+			ingredientName = ingredientName.toUpperCase();
+			ingredientName = ingredientName.trim();
+			int index = findIngredient(ingredients, ingredientName);
+			if (index >= 0) {
+				totalPrice = totalPrice + price[index];
+			} else if (index == -2) {
+				System.out.println("Pogrešan unos!!!");
+			}
+
+		}
+		System.out.print("Unesite vaš broj telefona : ");
+		String phone = s.next();
+		phone = phone.trim();
+		boolean isRegularCustomer = isRegularCustomer(phoneNumbers, phone);
+		if (isRegularCustomer) {
+			totalPrice = totalPrice * 0.9;
+		}
 
 	}
 	public static int findIngredient(String[] ingredients, String ingredientName) {
