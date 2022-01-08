@@ -35,6 +35,8 @@ public class Pasta_bar {
 		if (isRegularCustomer) {
 			totalPrice = totalPrice * 0.9;
 		}
+		System.out.println("Vaša pasta iznosi " + String.format("%.0f", totalPrice) + " rsd.");
+		System.out.println("Prijatno!!");
 
 	}
 	public static int findIngredient(String[] ingredients, String ingredientName) {
